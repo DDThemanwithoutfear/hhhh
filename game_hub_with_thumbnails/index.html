@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Hub</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    #menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+      background: #222;
+    }
+
+    .game {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      background: #333;
+      padding: 10px;
+      border-radius: 15px;
+    }
+
+    .game img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .game p {
+      margin-top: 8px;
+    }
+
+    .game:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+
+    #gameFrame {
+      width: 960px;
+      height: 600px;
+      border: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="menu">
+  <div class="game" onclick="loadGame('games/adventure-capitalist/index.html')">
+    <img src="thumbnails/adventure-capitalist.png">
+    <p>AdVenture Capitalist</p>
+  </div>
+
+  <div class="game" onclick="loadGame('games/retrobowl/index.html')">
+    <img src="thumbnails/retrobowl.png">
+    <p>Retro Bowl</p>
+  </div>
+</div>
+
+<iframe id="gameFrame"></iframe>
+
+<script>
+function loadGame(path) {
+  document.getElementById("gameFrame").src = path;
+}
+</script>
+
+</body>
+</html>
